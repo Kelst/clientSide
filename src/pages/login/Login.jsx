@@ -22,14 +22,17 @@ import { ContactPhone, Visibility, VisibilityOff } from '@mui/icons-material';
 import IconButton from '@mui/material/IconButton';
 import { useCountDown } from '../../hooks/useCountDown';
 import Timer from '../../components/timer/Timer';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 
 
 const defaultTheme = createTheme();
 export default function Login() {
+  const navigate = useNavigate();
 //from store
+
 const checkBillingIP= useStore(store=>store.checkBillingApi)
+const checkUser= useStore(store=>store.checkUser) 
 const ip= useStore(store=>store.ip)
 const login= useStore(store=>store.login)
 const isAuth= useStore(store=>store.isAuth)
@@ -44,9 +47,12 @@ const handleVeriffyCodes= useStore(store=>store.handleVeriffyCode)
 const handleLogInWithPassword= async()=>{
   
  let auth=await logIn(loginText,passwordText)
+ 
  if(!auth){
 
   setShowAllert({...showAllert,message:errorMessage,open:true,type:0})
+ } else {
+  navigate("/home")
  }
 }
 
@@ -142,7 +148,20 @@ const [sendSms,setSendSms]=React.useState(false)
   
   
   React.useEffect(() => {
+  
     const fetchData = async () => {
+      try {
+        let flag=  await checkUser();
+         
+          if (flag) {
+          
+          navigate("/home");
+          return
+        }
+        } catch (error) {
+        console.log("помилка в Layout при перевірці чи користувач авторизований");
+        return
+        }
       try {
         await checkBillingIP();
       if (ip!='')  {

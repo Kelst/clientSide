@@ -3,7 +3,7 @@ import { useNavigate, useRouteError } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
 import { purple } from '@mui/material/colors';
 import errorImage from "../../assets/404.png"
-import "./ErrorPage.module.css"
+import style from  "./ErrorPage.module.css"
 
 export default function ErrorPage() {
     const error = useRouteError();
@@ -18,7 +18,7 @@ export default function ErrorPage() {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center', 
-     minHeight:"100vh",
+      minHeight:"100vh",
 
      
       backgroundImage: `url(${errorImage})`,

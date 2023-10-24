@@ -1,23 +1,43 @@
 import React, { useEffect } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 import useStore from '../../store/store'
+import Navigation from '../../components/navigation/Navigation'
+import { Box } from '@mui/material'
 
 export default function Layout() {
-  const isAuth= useStore(store=>store.isAuth) 
+  
+
+  const checkUser= useStore(store=>store.checkUser)
+
+  
   const navigate=useNavigate()
 useEffect(()=>{
-if(!isAuth){
-  navigate("/login")
-}
+
+  const fetchData = async () => {
+    try {
+    let flag=  await checkUser();
+     
+      if (!flag) {
+      
+      navigate("/login");
+    }
+    } catch (error) {
+    console.log("помилка в Layout при перевірці чи користувач авторизований");
+    }
+  };
+  fetchData()
+
 },[])
   return (
-    <>
-    
-<h1>
-  TESTUVANJA
-</h1>
-     <Outlet/>
-      
-    </>
+    <div className='p-3 '>
+     
+    <div className='flex  gap-28 '>
+    <div className='relative'>
+    <Navigation />
+    </div>
+    <Outlet/>
+    </div>
+
+    </div>
   )
 }

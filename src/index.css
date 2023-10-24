@@ -2,10 +2,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root{
+-clr:#14161e;
+}
 *{
     
 font-family: 'Dancing Script', cursive;
 font-family: 'Domine', serif;
 font-family: 'Montserrat', sans-serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 
+}
+body{
+    min-height: 100vh;
+    background-color: rgb(211, 41, 41);
 }

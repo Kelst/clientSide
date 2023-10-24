@@ -1,0 +1,79 @@
+.sideBar{
+    @apply rounded-2xl;
+    position: absolute;
+    width: 80px;
+    height: 100vh;
+    background: #fff;
+    transition: 0.5s;
+    padding-left: 22px;
+    overflow: hidden;
+
+}
+.sideBar.active{
+    width: 300px;
+}
+.sideBar ul {
+    position: relative;
+    height: 100vh;
+
+}
+
+.sideBar ul li{
+    position: relative;
+    list-style: none;
+}
+.sideBar ul li.logo{
+    margin-bottom: 50px;
+
+}
+.sideBar ul li.logo .icon{
+  font-size: 2em;
+  color: var(--clr);
+}
+
+.sideBar ul li.logo .text{
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--clr);
+  }
+
+  .sideBar ul li a {
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+  }
+  .sideBar ul li a .icon {
+    position: relative;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    min-width: 60px;
+    height: 70px;
+    font-size: 1.5em;
+    color: #333;
+    transition: 0.5s;
+
+
+
+  }
+  .sideBar ul li a .text{
+
+    position: relative;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: #333;
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+
+
+
+  }
+  .sideBar ul li:hover a .icon,
+  .sideBar ul li:hover a .text
+  {
+    color: var(--bg);
+  }

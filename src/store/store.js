@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { create } from 'zustand'
 import AuthService from '../services/AuthService'
+import UserService from '../services/UserService'
 const useStore = create((set) => ({
   uid:[],
   ip:"",
@@ -14,8 +15,19 @@ const useStore = create((set) => ({
     uid:"",
     id:"",
   },
-async logIn(login,password){
+async checkUser(){
+  try {
+    let data= await UserService.checkUser()
+    set(state=>({...state,isAuth:true}))
+    return {isAuth: true}
+    
+  } catch (error) {
+    return {isAuth: false}
+    console.log("Error check user");
+  }
 
+},
+async logIn(login,password){
   try {
     const response=await AuthService.login(login,password)
     localStorage.setItem('token',response.data.accessToken);
