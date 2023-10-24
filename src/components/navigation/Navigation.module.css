@@ -12,6 +12,39 @@
 .sideBar.active{
     width: 300px;
 }
+.sideBar ul li.active{
+    background: red;
+    padding-left: 10px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+ .sideBar ul li.active::before{
+    top:-20px;
+    right:0;
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow:5px 5px 0 5px red;
+    background: transparent;
+ 
+
+ }
+ .sideBar ul li.active::after{ 
+    content: '';
+    position: absolute;
+    bottom:-20px;
+    right:0;
+    width: 20px;
+    height: 20px;
+
+    border-top-right-radius: 20px;
+    box-shadow:5px -5px 0 5px red;
+    background: transparent;
+ 
+
+ }
 .sideBar ul {
     position: relative;
     height: 100vh;
@@ -71,6 +104,37 @@
 
 
 
+  }
+  .sideBar ul li.active a .text{
+    
+    color: var(--bg);
+  }
+  .sideBar ul li.active a .icon{
+    position: relative;
+    z-index: 10000000000000;
+
+    color: #fff;
+  }
+  
+  .sideBar ul li.active a .icon::before{
+    content: '';
+    position: absolute;
+    
+    width: 60px;
+    background: var(--bg);
+    border-radius: 50%;
+    transition: 0.5s;
+    inset: 5px;
+    left: -16px;
+    z-index: -5;
+
+
+  }
+  .sideBar ul li.active:hover a .icon{
+    color: white;
+  }
+  .sideBar ul li:hover.active a .icon::before{
+    bag: gray;
   }
   .sideBar ul li:hover a .icon,
   .sideBar ul li:hover a .text

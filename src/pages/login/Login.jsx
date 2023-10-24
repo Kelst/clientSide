@@ -153,7 +153,7 @@ const [sendSms,setSendSms]=React.useState(false)
       try {
         let flag=  await checkUser();
          
-          if (flag) {
+          if (!flag) {
           
           navigate("/home");
           return
