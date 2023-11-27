@@ -10,11 +10,12 @@
 
 }
 .sideBar.active{
-    width: 300px;
+    width: 200px;
 }
 .sideBar ul li.active{
-    background: red;
+    background: rgb(191,16,16);
     padding-left: 10px;
+    
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
 }
@@ -25,10 +26,11 @@
     position: absolute;
     width: 20px;
     height: 20px;
+    border-width: 0px;
+    border-color: transparent;
     border-bottom-right-radius: 20px;
-    box-shadow:5px 5px 0 5px red;
-    background: transparent;
- 
+    box-shadow:5px 5px 0 5px rgb(191,16,16);
+    
 
  }
  .sideBar ul li.active::after{ 
@@ -40,7 +42,7 @@
     height: 20px;
 
     border-top-right-radius: 20px;
-    box-shadow:5px -5px 0 5px red;
+    box-shadow:5px -5px 0 5px rgb(191,16,16);
     background: transparent;
  
 
@@ -56,7 +58,9 @@
     list-style: none;
 }
 .sideBar ul li.logo{
+  
     margin-bottom: 50px;
+    max-width: 30px;
 
 }
 .sideBar ul li.logo .icon{
@@ -97,7 +101,7 @@
     align-items: center;
     font-size: 1em;
     color: #333;
-    padding-left: 15px;
+    padding-left: 1px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     transition: 0.5s;
@@ -112,7 +116,7 @@
   .sideBar ul li.active a .icon{
     position: relative;
     z-index: 10000000000000;
-
+    padding-left: 1.2px;
     color: #fff;
   }
   
@@ -134,7 +138,8 @@
     color: white;
   }
   .sideBar ul li:hover.active a .icon::before{
-    bag: gray;
+    background: black;
+    
   }
   .sideBar ul li:hover a .icon,
   .sideBar ul li:hover a .text

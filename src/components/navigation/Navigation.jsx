@@ -7,11 +7,13 @@ import InfoIcon from '@mui/icons-material/Info';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import LogoutIcon from '@mui/icons-material/Logout';
 import useStore from "../../store/store";
+import KeyboardTabOutlinedIcon from '@mui/icons-material/KeyboardTabOutlined';
+import IconMenuGridO from "../icons/IconMenuGrid0";
+
 export default function Navigation() {
 
     const [active,setActive]=useState(false)
-    const [activeItem, setActiveItem] = useState(null);
-
+    const [activeItem, setActiveItem] = useState('Item1');
     const logOut=useStore(state=>state.logOut)
     const navigate=useNavigate()
     const handleLogOuth = async ()=>{
@@ -33,13 +35,15 @@ export default function Navigation() {
         setActive(ac=>!ac)
     }
   return (
-    <div className={`${clases.sideBar} ${active?clases.active:''}`}>
+    <div className={`${clases.sideBar}    ${active?clases.active:''}`}>
     <nav >
       <ul>
-        <li className={clases.logo}>
-          <div onClick={handleActiveNavigation}>
-            
-            <div className={clases.text}> logo</div>
+        <li className={`${clases.logo}     `}>
+          <div     className={` cursor-pointer mt-5 flex transition-transform  duration-300 ease-in  transform ${
+      active ? 'rotate-180 translate-x-36' : ''
+    }`}   onClick={handleActiveNavigation}>
+          {/* <KeyboardTabOutlinedIcon  className={active?'    ml-auto': `  `} /> */}
+          <IconMenuGridO/>
           </div>
         </li>
 
@@ -50,7 +54,7 @@ export default function Navigation() {
           >
             <NavLink to={"#"}>
               <div className={clases.icon}><PermIdentityIcon/></div>
-              <div className={clases.text}>Item1</div>
+              <div className={clases.text}>Item1 </div>
             </NavLink>
           </li>
           <li style={{'--bg': '#00FF00'}}

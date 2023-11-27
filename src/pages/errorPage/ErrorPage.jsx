@@ -33,12 +33,12 @@ export default function ErrorPage() {
 
       <p className='text-white text-[66px] font-bold block text-center font-["Nosifer"]' > 
       {
-       error.status.toString().slice(0,1) 
+       error.status?.toString().slice(0,1) 
       }
-      <span className='  mx-2  inline-block  text-[75px] text-[#dd8232] font-["Nosifer"] '>{error.status.toString().slice(1,2)}</span>
+      <span className='  mx-2  inline-block  text-[75px] text-[#dd8232] font-["Nosifer"] '>{error?.status?.toString().slice(1,2)}</span>
    
       {
-       error.status.toString().slice(-1) 
+       error?.status?.toString().slice(-1) 
       }  
        </p>  
    <div>

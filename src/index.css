@@ -16,6 +16,10 @@ box-sizing: border-box;
 
 }
 body{
-    min-height: 100vh;
-    background-color: rgb(211, 41, 41);
+   min-height: 100vh;
+     /* background: rgb(247,108,108);
+    background: linear-gradient(34deg, rgba(247,108,108,1) 0%, rgba(253,29,29,1) 57%, rgba(255,72,72,0.8379726890756303) 100%); */
+    background: rgb(191,16,16);
+    background: linear-gradient(188deg, rgba(191,16,16,1) 0%, rgba(187,17,17,1) 57%, rgba(255,37,37,0.8379726890756303) 100%);
+
 }

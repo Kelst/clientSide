@@ -8,17 +8,13 @@ export default function Layout() {
   
 
   const checkUser= useStore(store=>store.checkUser)
-
-  
   const navigate=useNavigate()
 useEffect(()=>{
 
   const fetchData = async () => {
     try {
     let flag=  await checkUser();
-     
       if (!flag) {
-      
       navigate("/login");
     }
     } catch (error) {
@@ -29,7 +25,7 @@ useEffect(()=>{
 
 },[])
   return (
-    <div className='p-3 '>
+    <div className='p-3 pt-0 '>
      
     <div className='flex  gap-28 '>
     <div className='relative'>

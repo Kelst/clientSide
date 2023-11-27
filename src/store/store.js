@@ -32,11 +32,11 @@ async logIn(login,password){
     const response=await AuthService.login(login,password)
     localStorage.setItem('token',response.data.accessToken);
     set(state=>({...state,isAuth:true,errorMessage:'',user:{...state.user,...response.data.user}}))
-    return true
+    return {flag:true,errText:''}
   } catch (error) {
-    console.log(error.response?.data?.message);
+    console.log(error.response?.data?.message,"MESSAge ERROR");
     set(state=>({...state,errorMessage:error.response?.data?.message}))
-    return false
+    return {flag:false,errText:error?.response?.data?.message}
   }
 
 },

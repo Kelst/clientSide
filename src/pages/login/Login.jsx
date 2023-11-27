@@ -48,9 +48,19 @@ const handleLogInWithPassword= async()=>{
   
  let auth=await logIn(loginText,passwordText)
  
- if(!auth){
+ if(!auth.flag){
+  console.log(auth.errText,"handleError");
 
-  setShowAllert({...showAllert,message:errorMessage,open:true,type:0})
+  // setShowAllert({...showAllert,message:auth.errText,type:0})
+  // setShowAllert({...showAllert,open:true,type:0})
+  setShowAllert(prew=>({
+    ...prew,
+    open:true, 
+    message:auth.errText,
+    type:0,
+ 
+  }))
+ 
  } else {
   navigate("/home")
  }
@@ -148,7 +158,7 @@ const [sendSms,setSendSms]=React.useState(false)
   
   
   React.useEffect(() => {
-  
+  console.log(token,"TOKKEN");
     const fetchData = async () => {
       try {
         let flag=  await checkUser();
