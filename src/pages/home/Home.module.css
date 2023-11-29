@@ -1,0 +1,3 @@
+.container {
+    @apply w-[1450px] max-w-[1450px] h-[100vh]  m-auto pt-2 px-2 mt-[150px]
+} 

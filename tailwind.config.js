@@ -5,11 +5,30 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'reverse-spin': 'reverse-spin 5s linear infinite',
+        'my-spin': 'spin 20s linear infinite'
+      },
+      keyframes: {
+        'reverse-spin': {
+          from: {
+            transform: 'rotate(360deg)'
+          },
+        
+        },
+        'spin':{
+          from:{
+            transform:'rotate(-360deg)'
+          }
+        }
+      }
+      
+    },
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: true, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
+    themes: false, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
     darkTheme: "lofi", // name of one of the included themes for dark mode
     base: true, // applies background color and foreground color for root element by default
     styled: true, // include daisyUI colors and design decisions for all components

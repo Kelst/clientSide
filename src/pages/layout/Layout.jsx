@@ -3,6 +3,8 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import useStore from '../../store/store'
 import Navigation from '../../components/navigation/Navigation'
 import { Box } from '@mui/material'
+import Loader from '../../components/loader/Loader'
+import NavigationBig from '../../components/navigation/NavigationBig'
 
 export default function Layout() {
   
@@ -25,11 +27,14 @@ useEffect(()=>{
 
 },[])
   return (
-    <div className='p-3 pt-0 '>
-     
-    <div className='flex  gap-28 '>
-    <div className='relative'>
-    <Navigation />
+    <div className='pt-0 '>
+           <Loader/>
+
+    <div className='flex  gap-x-28 md:gap-x-0   '>
+    <div className=' flex-shrink'>
+     <Navigation  /> 
+    <NavigationBig  />
+    
     </div>
     <Outlet/>
     </div>

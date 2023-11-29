@@ -1,25 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Domine:wght@400;600&family=Montserrat:ital,wght@0,200;0,300;0,400;0,600;1,200&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 :root{
 -clr:#14161e;
 }
 *{
-    
-font-family: 'Dancing Script', cursive;
-font-family: 'Domine', serif;
-font-family: 'Montserrat', sans-serif;
+  font-family: 'Lato', sans-serif;
 margin: 0;
 padding: 0;
 box-sizing: border-box;
 
 }
 body{
-   min-height: 100vh;
-     /* background: rgb(247,108,108);
-    background: linear-gradient(34deg, rgba(247,108,108,1) 0%, rgba(253,29,29,1) 57%, rgba(255,72,72,0.8379726890756303) 100%); */
-    background: rgb(191,16,16);
-    background: linear-gradient(188deg, rgba(191,16,16,1) 0%, rgba(187,17,17,1) 57%, rgba(255,37,37,0.8379726890756303) 100%);
+  @apply bg-red-600;
+
 
 }

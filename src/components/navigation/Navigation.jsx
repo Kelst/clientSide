@@ -9,22 +9,32 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import useStore from "../../store/store";
 import KeyboardTabOutlinedIcon from '@mui/icons-material/KeyboardTabOutlined';
 import IconMenuGridO from "../icons/IconMenuGrid0";
+import Loader from "../loader/Loader";
+import ExitDialog from "../dialog/ExitDialog";
 
 export default function Navigation() {
 
     const [active,setActive]=useState(false)
     const [activeItem, setActiveItem] = useState('Item1');
     const logOut=useStore(state=>state.logOut)
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
     const navigate=useNavigate()
     const handleLogOuth = async ()=>{
         try {
-            
             await logOut()
             navigate("/login")
 
         }
         catch (e){
-
+              console.log('помилка виходу з акаунта');
         }
 
     }
@@ -34,8 +44,11 @@ export default function Navigation() {
     const handleActiveNavigation=()=>{
         setActive(ac=>!ac)
     }
+    const handleActiveNavigationFromActive=()=>{
+      setActive(false)
+  }
   return (
-    <div className={`${clases.sideBar}    ${active?clases.active:''}`}>
+    <div className={`md:-translate-x-72   ${clases.sideBar}  ${active?clases.active:''}`}>
     <nav >
       <ul>
         <li className={`${clases.logo}     `}>
@@ -48,36 +61,44 @@ export default function Navigation() {
         </li>
 
         <div className={clases.menuList}>
-          <li style={{'--bg': '#FFA500'}}
+          <li style={{'--bg': '#000'}}
           className={activeItem=='Item1'?clases.active:""}
-          onClick={()=>handleActiveItemSelect('Item1')}
+          onClick={()=>{
+            handleActiveNavigationFromActive()
+            handleActiveItemSelect('Item1')}}
           >
             <NavLink to={"#"}>
               <div className={clases.icon}><PermIdentityIcon/></div>
               <div className={clases.text}>Item1 </div>
             </NavLink>
           </li>
-          <li style={{'--bg': '#00FF00'}}
+          <li style={{'--bg': '#000'}}
                     className={activeItem=='Item2'?clases.active:""}
-                    onClick={()=>handleActiveItemSelect('Item2')}
+                    onClick={()=>{
+                      handleActiveNavigationFromActive()
+                      handleActiveItemSelect('Item2')}}
           >
             <NavLink to={"#"}>
               <div className={clases.icon}><PaidIcon/></div>
               <div className={clases.text}>Item2</div>
             </NavLink>
           </li>
-          <li style={{'--bg': '#0000FF'}}
+          <li style={{'--bg': '#000'}}
                     className={activeItem=='Item3'?clases.active:""}
-                    onClick={()=>handleActiveItemSelect('Item3')}
+                    onClick={()=>{
+                      handleActiveNavigationFromActive()
+                      handleActiveItemSelect('Item3')}}
           >
             <NavLink to={"#"}>
               <div className={clases.icon}><InfoIcon/></div>
               <div className={clases.text}>Item3</div>
             </NavLink>
           </li>
-          <li style={{'--bg': '#FFFF00'}} 
+          <li style={{'--bg': '#000'}} 
                     className={activeItem=='Item4'?clases.active:""}
-                    onClick={()=>handleActiveItemSelect('Item4')}
+                    onClick={()=>{
+                      handleActiveNavigationFromActive()
+                      handleActiveItemSelect('Item4')}}
           >
             <NavLink to={"#"}>
               <div className={clases.icon}><NewspaperIcon/></div>
@@ -88,11 +109,11 @@ export default function Navigation() {
 
         </div>
         <div className={clases.bottom}>
-            <li style={{'--bg': '#FF69B4'}} 
+            <li style={{'--bg': '#000'}} 
                       className={activeItem=='Item5'?clases.active:""}
                       onClick={()=>handleActiveItemSelect('Item5')}
             >
-            <NavLink  onClick={()=>handleLogOuth()}>
+            <NavLink  onClick={()=>handleClickOpen()}>
               <div className={clases.icon}><LogoutIcon/></div>
               <div className={clases.text}>LogOut</div>
             </NavLink>
@@ -100,6 +121,7 @@ export default function Navigation() {
         </div>
       </ul>
     </nav>
+    <ExitDialog open={open} handleClose={handleClose} handleLogOuth={handleLogOuth}/>
     </div>
   );
 }

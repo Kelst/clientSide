@@ -10,6 +10,7 @@ const useStore = create((set) => ({
   isAuth:false,
   isCheckedPhone:false,
   errorMessage:'',
+  openLoader:false,
   token:'',
   user:{
     uid:"",
