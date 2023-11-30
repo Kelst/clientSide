@@ -16,7 +16,7 @@ setActiveItem(item)
     <div className={clases.container}>
     <div className={clases.navigation}>
       <img src={logo} width={210} height={200} className=' absolute left-[-23px] mt-8 '/>
-
+        <span className=' absolute font-bold top-[80px]   left-5 uppercase text-white'>Особистий кабінет</span>
       <ul>
         <li className={clases.list +' '+ `${activeItem=='Item1'? clases.active:''}`}
         onClick={()=>handleSetActive('Item1')}
