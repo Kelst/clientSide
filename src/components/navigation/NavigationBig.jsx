@@ -15,14 +15,14 @@ setActiveItem(item)
   return (
     <div className={clases.container}>
     <div className={clases.navigation}>
-      <img src={logo} width={150} height={100} className=' absolute left-2 top-[1px]'/>
+      <img src={logo} width={210} height={200} className=' absolute left-[-23px] mt-8 '/>
 
       <ul>
         <li className={clases.list +' '+ `${activeItem=='Item1'? clases.active:''}`}
         onClick={()=>handleSetActive('Item1')}
         >
           <a href="#">
-            <span className={clases.icon}><PermIdentityIcon fontSize='large' /></span>
+            <span className={clases.icon}><PermIdentityIcon fontSize='medium' /></span>
             <span className={clases.text}>Загальне</span>
           </a>
         </li>
@@ -30,7 +30,7 @@ setActiveItem(item)
          onClick={()=>handleSetActive('Item2')}
         >
           <a href="#">
-            <span className={clases.icon}><PaidIcon fontSize='large' /></span>
+            <span className={clases.icon}><PaidIcon fontSize='medium' /></span>
             <span className={clases.text}>Оплати</span>
           </a>
         </li>
@@ -38,7 +38,7 @@ setActiveItem(item)
          onClick={()=>handleSetActive('Item3')}
         >
           <a href="#">
-            <span className={clases.icon}><InfoIcon fontSize='large' /></span>
+            <span className={clases.icon}><InfoIcon fontSize='medium' /></span>
             <span className={clases.text}>Додатково</span>
           </a>
         </li>
@@ -47,7 +47,7 @@ setActiveItem(item)
         >
 
           <a href="#">
-            <span className={clases.icon}><NewspaperIcon fontSize='large'  /></span>
+            <span className={clases.icon}><NewspaperIcon fontSize='medium'  /></span>
             <span className={clases.text}>Новини </span>
           </a>
         </li>
@@ -56,7 +56,7 @@ setActiveItem(item)
         >
 
           <a href="#">
-            <span className={clases.icon}><LogoutIcon fontSize='large' /></span>
+            <span className={clases.icon}><LogoutIcon className=' hover:text-white' fontSize='medium' /></span>
             <span className={clases.text}>Вийти</span>
           </a>
         </li>
