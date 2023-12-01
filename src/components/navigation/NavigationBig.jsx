@@ -13,10 +13,10 @@ export default function NavigationBig() {
 setActiveItem(item)
   }
   return (
-    <div className={clases.container}>
+    <div className=' '>
     <div className={clases.navigation}>
       <img src={logo} width={210} height={200} className=' absolute left-[-23px] mt-8 '/>
-        <span className=' absolute font-bold top-[80px]   left-5 uppercase text-white'>Особистий кабінет</span>
+        <div className=' absolute font-bold top-[90px]   left-0 uppercase text-white '> <span className={clases.spanText}> Особистий кабінет</span>  </div>
       <ul>
         <li className={clases.list +' '+ `${activeItem=='Item1'? clases.active:''}`}
         onClick={()=>handleSetActive('Item1')}
