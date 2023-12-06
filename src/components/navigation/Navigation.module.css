@@ -10,7 +10,7 @@
     padding-left: 22px;
     color: white;
     overflow: hidden;
-    
+    z-index: 100;
 }
 .sideBar.active{
     width: 200px;

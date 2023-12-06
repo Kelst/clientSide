@@ -69,7 +69,7 @@ export default function Navigation() {
           >
             <NavLink to={"#"}>
               <div className={clases.icon}><PermIdentityIcon/></div>
-              <div className={clases.text}>Item1 </div>
+              <div className={clases.text}>Загальне </div>
             </NavLink>
           </li>
           <li style={{'--bg': '#000'}}
@@ -80,7 +80,7 @@ export default function Navigation() {
           >
             <NavLink to={"#"}>
               <div className={clases.icon}><PaidIcon/></div>
-              <div className={clases.text}>Item2</div>
+              <div className={clases.text}>Оплати</div>
             </NavLink>
           </li>
           <li style={{'--bg': '#000'}}
@@ -91,7 +91,7 @@ export default function Navigation() {
           >
             <NavLink to={"#"}>
               <div className={clases.icon}><InfoIcon/></div>
-              <div className={clases.text}>Item3</div>
+              <div className={clases.text}>Додатково</div>
             </NavLink>
           </li>
           <li style={{'--bg': '#000'}} 
@@ -102,7 +102,7 @@ export default function Navigation() {
           >
             <NavLink to={"#"}>
               <div className={clases.icon}><NewspaperIcon/></div>
-              <div className={clases.text}>Item4</div>
+              <div className={clases.text}>Новини</div>
             </NavLink>
           </li>
           
