@@ -48,7 +48,8 @@ export default function Navigation() {
       setActive(false)
   }
   return (
-    <div className={`md:-translate-x-72   ${clases.sideBar}  ${active?clases.active:''}`}>
+    <div className="fixed left-0 z-30">
+    <div className={`md:-translate-x-72    ${clases.sideBar}  ${active?clases.active:''}`}>
     <nav >
       <ul>
         <li className={`${clases.logo}     `}>
@@ -122,6 +123,6 @@ export default function Navigation() {
       </ul>
     </nav>
     <ExitDialog open={open} handleClose={handleClose} handleLogOuth={handleLogOuth}/>
-    </div>
+    </div></div>
   );
 }

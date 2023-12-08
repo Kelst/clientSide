@@ -1,7 +1,7 @@
 
 
 .sideBar{
-    @apply rounded-2xl;
+    @apply rounded-2xl rounded-tl-none rounded-bl-none;
     position: absolute;
     width: 80px;
     height: 100vh;

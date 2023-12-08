@@ -20,6 +20,7 @@ margin-left:100px ;
 margin-right:100px ;
 height: 70px;
 
+
 @apply rounded-xl p-6 flex justify-center items-center
 
 
@@ -144,10 +145,11 @@ color: white;
 
 .spanText{
     font-size: 0.8rem;
-  animation: pulsate 1.5s infinite alternate;  
+  animation: pulsate 4.5s infinite alternate;  
   border: 0.2rem solid #e92e2e;
   border-radius: 2rem;
-  padding: 0.4em;
+  padding: 0.6em;
+
   box-shadow: 0 0 .2rem #fff,
             0 0 .2rem #db1d1d,
             0 0 2rem #dc2626,
@@ -155,7 +157,7 @@ color: white;
             0 0 2.8rem #dc2626,
             inset 0 0 1.3rem #b81e1e;
 }
-.spanText::after{
+/* .spanText::after{
     content: "";
     width: 7px;
     height: 14px;
@@ -186,21 +188,40 @@ color: white;
     0 0 0.8rem #dc2626,
     0 0 2.8rem #dc2626,
     inset 0 0 1.3rem #b81e1e;
+} */
+
+.spanTextB{
+  font-size: 0.8rem;
+  animation: pulsate 4.5s infinite alternate;  
+  border: 0.2rem solid #e92e2e;
+  border-radius: 2rem;
+  padding: 0.8em;
+  padding-left: 12px;
+  padding-right: 12px;
+  
+  margin-top: -15px;
+  box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #db1d1d,
+            0 0 2rem #dc2626,
+            0 0 0.4rem #dc2626,
+            0 0 0.4rem #dc2626,
+            inset 0 0 1.3rem #b81e1e;
 }
+
 
 @keyframes pulsate {
     
     100% {
   
         text-shadow:
-        0 0 4px #fff,
-        0 0 11px #db1d1d,
-        0 0 19px #dc2626,
-        0 0 40px #dc2626,
-        0 0 80px #dc2626,
-        0 0 90px #dc2626
-        0 0 100px #dc2626,
-        0 0 150px #dc2626;
+        0 0 2px #fff,
+        0 0 8px #db1d1d,
+        0 0 15px #dc2626,
+        0 0 35px #dc2626,
+        0 0 76px #dc2626,
+        0 0 85px #dc2626
+        0 0 95px #dc2626,
+        0 0 140px #dc2626;
     
     }
     
