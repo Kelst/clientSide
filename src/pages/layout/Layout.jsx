@@ -35,7 +35,7 @@ useEffect(()=>{
      <Navigation  /> 
     <NavigationBig  />
     </div>
-    <div className='w-[360px]  m-auto mt-[200px] h-[calc(100vh-200px)] mr-[28px] md:w-[896px]  sm:mr-auto md:mr-auto xl:bg-black xl:w-[1450px] xl:mr-auto  flex flex-col justify-start   items-center '>
+    <div className='w-[360px] m-auto mt-[150px] h-[calc(100vh-200px)] mr-auto md:w-[896px]  sm:mr-auto md:mr-auto xl:bg-black xl:w-[1450px] xl:mr-auto  flex flex-col justify-start   items-center '>
     <Outlet/>
     </div>
     </div>

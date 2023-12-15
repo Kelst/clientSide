@@ -50,7 +50,7 @@ setActiveItem(item)
   }
   return (
     <div className=' ' >
-      <div className={` shadow-md  shadow-zinc-800 transition-all translate-y-[0px] p-2 md:-translate-y-80 max-w-[360px]  max-h-[120px] md: bg-white    fixed z-1 left-[calc(100%/2-68px)]   top-2  rounded-md `}>
+      <div className={` shadow-md  shadow-zinc-800 transition-all translate-y-[0px] p-2 md:-translate-y-80 max-w-[360px]  max-h-[120px] md: bg-white   fixed z-20    left-[calc(100%/2-52px)]  sm:left-[calc(100%/2-58px)]   top-2  rounded-md `}>
         <img src={minLogo} width={'100px'} height={'100px'} className=' absolute  left-[26%] top-[-2px]' alt="" />
             
             <div className='flex flex-col justify-center items-center '>
@@ -108,7 +108,7 @@ setActiveItem(item)
             <span className={clases.text}>Вийти</span>
           </a>
         </li>
-        <div className='  absolute font-bold top-[90px] right-[calc(vw/2)] transition-all duration-500  uppercase text-white  2xl:top-4  2xl:right-[60px] 2xl:text-black'>
+        <div className='  absolute font-bold top-[95px] right-[0px]  text-center transition-all duration-500 sm:hidden md:visible  uppercase text-white 2xl:n 2xl:top-4  2xl:right-[60px] 2xl:text-black'>
         <div className={` flex flex-col items-center text-sm ${clases.spanTextB}`}>
           <span className=' text-[10px]  text-gray-800 text-inherit'>{user.name} </span>
           <div className=' '>
